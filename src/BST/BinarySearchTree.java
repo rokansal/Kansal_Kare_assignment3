@@ -30,7 +30,8 @@ public class BinarySearchTree<T extends Comparable<T>> {
     }
 
     public void inOrder() {
-
+        System.out.print("In order: ");
+        
     }
 
     public void getSingleParent() {
@@ -41,8 +42,9 @@ public class BinarySearchTree<T extends Comparable<T>> {
 
     }
 
-    public void getCousins() {
-
+    public void getCousins(T item) {
+        System.out.println(item);
+        return;
     }
 
 
