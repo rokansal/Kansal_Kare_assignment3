@@ -24,13 +24,14 @@ public class BinarySearchTreeDriver {
         String[] vals = inputValues.split(" ");
         sc.close();
 
-        System.out.println("Enter list type (i - int, d - double, s - std:string): ");
+        System.out.print("Enter list type (i - int, d - double, s - std:string): ");
         userChoice = scan.nextLine();
 
         //tree initialization
         if (userChoice.equals("s")) {
             BinarySearchTree<String> bst = new BinarySearchTree<>();
             for (String value : vals) {
+                System.out.println(value);
                 bst.insert(value);
             }
             while (b) {
