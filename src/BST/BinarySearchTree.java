@@ -1,6 +1,6 @@
 package BST;
 
-import BST.NodeType;
+// import BST.NodeType;
 
 public class BinarySearchTree<T extends Comparable<T>> {
     private NodeType<T> root;
@@ -30,7 +30,7 @@ public class BinarySearchTree<T extends Comparable<T>> {
                 System.out.println("Already in the tree.");
                 return;
             }
-            else if (key.compareTo(root.info) > 0) {
+            else if (key.compareTo(temp.info) > 0) {
                 temp = temp.right;
             }
             else {
