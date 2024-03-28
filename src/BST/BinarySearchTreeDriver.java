@@ -31,11 +31,10 @@ public class BinarySearchTreeDriver {
         if (userChoice.equals("s")) {
             BinarySearchTree<String> bst = new BinarySearchTree<>();
             for (String value : vals) {
-                System.out.println(value);
                 bst.insert(value);
             }
             while (b) {
-                System.out.println("Commands:\n(i) - Insert Item \n(d) - Delete Item \n(p) - Print Tree \n(r) - Retrieve Item \n(l) - Count Leaf Nodes \n(s) - Find Single Parents \n(c) - Find Cousins \n(q) - Quit program ");
+                System.out.println("\nCommands:\n(i) - Insert Item \n(d) - Delete Item \n(p) - Print Tree \n(r) - Retrieve Item \n(l) - Count Leaf Nodes \n(s) - Find Single Parents \n(c) - Find Cousins \n(q) - Quit program ");
                 userChoice = scan.nextLine();
                 if (userChoice.equals("q")) {
                     b = false;

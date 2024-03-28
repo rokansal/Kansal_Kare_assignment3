@@ -16,10 +16,12 @@ public class BinarySearchTree<T extends Comparable<T>> {
 
         if (root == null) {
             root = new NodeType<T>(key);
+            return;
         }
 
         if (root.info == null) {
             root.info = key;
+            return;
         }
 
         NodeType<T> prev = null;
@@ -51,7 +53,23 @@ public class BinarySearchTree<T extends Comparable<T>> {
     }
 
     public boolean retrieve (T item) {
-        return true;
+        if (item == null || root == null) {
+            return false;
+        }
+        
+        NodeType<T> temp = root;
+        while (temp != null) {
+            if (temp.info.compareTo(item) == 0) {
+                return true;
+            }
+            if (temp.info.compareTo(item) > 0) {
+                temp = temp.left;
+            }
+            else {
+                temp = temp.right;
+            }
+        }
+        return false;
     }
 
     public void inOrder() {
