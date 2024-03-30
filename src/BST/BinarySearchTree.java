@@ -5,6 +5,10 @@ package BST;
 public class BinarySearchTree<T extends Comparable<T>> {
     private NodeType<T> root;
 
+    public NodeType<T> getRoot() {
+        return root;
+    }
+
     public BinarySearchTree() {
         root = new NodeType<T>();
     }
@@ -49,7 +53,55 @@ public class BinarySearchTree<T extends Comparable<T>> {
     }
 
     public void delete(T key) {
-
+        NodeType<T> prev = null;
+        NodeType<T> temp = root;
+        while (temp != null) {
+            if (key.compareTo(temp.info) == 0) {
+                if (temp.left == null && temp.right == null) {
+                    if (prev.info.compareTo(key) < 0) {
+                        prev.right = null;
+                    }
+                    else {
+                        prev.left = null;
+                    }
+                } else if (temp.left == null || temp.right == null) {
+                    if (temp.left == null) {
+                        if (prev.info.compareTo(key) < 0) {
+                            prev.right = temp.right;
+                        }
+                        else {
+                            prev.left = temp.right;
+                        }
+                    }
+                    else {
+                        if (prev.info.compareTo(key) > 0) {
+                            prev.right = temp.left;
+                        }
+                        else {
+                            prev.left = temp.left;
+                        }
+                    }
+                } else {
+                    NodeType<T> successor = temp.right;
+                    NodeType<T> prevSuccessor = temp;
+                    while (successor.left != null) {
+                        prevSuccessor = successor;
+                        successor = successor.left;
+                    }
+                    temp.info = successor.info;
+                    prevSuccessor.left = null;
+                }
+                return;
+            }
+            prev = temp;
+            if (key.compareTo(temp.info) > 0) {
+                temp = temp.right;
+            }
+            else {
+                temp = temp.left;
+            }
+        }
+        System.out.println("Element is not in tree");
     }
 
     public boolean retrieve (T item) {
@@ -89,8 +141,15 @@ public class BinarySearchTree<T extends Comparable<T>> {
 
     }
 
-    public void getSingleParent() {
-
+    public void getSingleParent(NodeType<T> node) {
+        if (node == null) {
+            return;
+        }
+        getSingleParent(node.left);
+        if ((node.left == null || node.right == null) && !(node.left == null && node.right == null)) {
+            System.out.print("" + node.info + " ");
+        }
+        getSingleParent(node.right);
     }
 
     public void getNumLeafNodes() {

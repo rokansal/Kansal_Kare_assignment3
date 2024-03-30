@@ -63,7 +63,8 @@ public class BinarySearchTreeDriver {
                     bst.getNumLeafNodes();
                 } else if (userChoice.equals("s")) {
                     System.out.print("Single Parents: ");
-                    bst.getSingleParent();
+                    bst.getSingleParent(bst.getRoot());
+                    System.out.println();
                 } else if (userChoice.equals("c")) {
                     bst.inOrder();
                     System.out.println("Enter a string: ");
@@ -109,7 +110,7 @@ public class BinarySearchTreeDriver {
                     bst.getNumLeafNodes();
                 } else if (userChoice.equals("s")) {
                     System.out.print("Single Parents: ");
-                    bst.getSingleParent();
+                    bst.getSingleParent(bst.getRoot());
                 } else if (userChoice.equals("c")) {
                     bst.inOrder();
                     System.out.println("Enter an integer: ");
@@ -156,7 +157,7 @@ public class BinarySearchTreeDriver {
                     bst.getNumLeafNodes();
                 } else if (userChoice.equals("s")) {
                     System.out.print("Single Parents: ");
-                    bst.getSingleParent();
+                    bst.getSingleParent(bst.getRoot());
                 } else if (userChoice.equals("c")) {
                     bst.inOrder();
                     System.out.println("Enter a double: ");
