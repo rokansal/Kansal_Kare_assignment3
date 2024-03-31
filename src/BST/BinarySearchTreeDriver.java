@@ -168,7 +168,6 @@ public class BinarySearchTreeDriver {
                     System.out.println("Invalid choice. Please try again. ");
                 }
             }
-
         } else {
             System.out.println("Invalid data type");
         }
