@@ -84,12 +84,17 @@ public class BinarySearchTree<T extends Comparable<T>> {
                 } else {
                     NodeType<T> successor = temp.right;
                     NodeType<T> prevSuccessor = temp;
+                    boolean b = true;
                     while (successor.left != null) {
+                        b = false;
                         prevSuccessor = successor;
                         successor = successor.left;
                     }
                     temp.info = successor.info;
-                    prevSuccessor.left = null;
+                    if (b)
+                        prevSuccessor.right = null;
+                    else
+                        prevSuccessor.left = null;
                 }
                 return;
             }
