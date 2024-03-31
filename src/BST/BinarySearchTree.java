@@ -158,11 +158,22 @@ public class BinarySearchTree<T extends Comparable<T>> {
     }
 
     public void getNumLeafNodes() {
+        System.out.println(leafCounter(root));
+    }
 
+    public int leafCounter(NodeType<T> node) {
+        if (node == null) {
+            return 0;
+        }
+
+        if (node.left == null && node.right == null) {
+            return 1;
+        }
+
+        return leafCounter(node.left) + leafCounter(node.right);
     }
 
     public void getCousins(T item) {
-        System.out.println(item);
-        return;
+        
     }
 }
