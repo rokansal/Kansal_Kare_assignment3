@@ -5,7 +5,7 @@
     - Compile and run with the command "./run.sh".
       - run.sh contains java command and by default contains int-input.txt to run with integers
       - Go into shell file and change text file name to use different text file
-    - Alternatively after compiled you can use java -cp bin BST.BinarySearchTreeDriver *inputfile here* to run code
+    - Alternatively after compiled you can use "java -cp bin BST.BinarySearchTreeDriver *inputfile here*" to run code
 
 # Contributors
     - Yatin Kare yk72286@uga.edu
