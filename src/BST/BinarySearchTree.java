@@ -174,6 +174,53 @@ public class BinarySearchTree<T extends Comparable<T>> {
     }
 
     public void getCousins(T item) {
-        
+        int level = getLevel(item);
+        printCousins(root, item, level);
+        System.out.println("");
     }
-}
+
+    private void printCousins(NodeType<T> temp, T item, int level) {
+        if (temp == null || level < 2) {
+            return;
+        } if (level == 2) {
+            if(temp.left != null) {
+                if (temp.left.info.equals(item)) {
+                    return;
+                }
+                System.out.print(" " + temp.left.info);
+            }
+            if(temp.right != null) {
+                if(temp.right.info.equals(item)) {
+                    return;
+                }
+                System.out.print(" " + temp.right.info);
+            }
+        } else if (level > 2) {
+            printCousins(temp.left, item, level - 1);
+            printCousins(temp.right, item, level - 1);
+        }
+    }
+
+    public int getLevel(T item) {
+        if (item == null || root == null) {
+            return 0;
+        }
+        
+        int level = 1;
+        NodeType<T> temp = root;
+        while (temp != null) {
+            if (temp.info.compareTo(item) == 0) {
+                return level;
+            }
+            if (temp.info.compareTo(item) > 0) {
+                temp = temp.left;
+                level++;
+            }
+            else {
+                temp = temp.right;
+                level++;
+            }
+        }
+        return level;
+    }
+ }
