@@ -13,34 +13,30 @@
     - Rohan Kansal rk66422@uga.edu
         - Driver file, Retrieve, Delete, Get Single Parent.
 
-# getSingleParent(NodeType<T> node)
+# getSingleParent
     ## Psuedocode
+    
+    public void getSingleParent(NodeType<T> node)
       if node is null, return
-
       call node.left
-      
       check if node only one of node.left and node.right is null, or that node only has one child
-      
       call node.right
 
     ## Discussion
-        - Recurrence Relation: T(n) = T(n-1) + 1. a=1, b=1, d=0, so it is in O(n)
+        - Recurrence Relation: T(n) = 2T(n/2) + 1. a=2, b=2, d=0, so it is in O(n)
         The complexity of this operation is O(n) because the function recursively visits every node in the tree.
 
 # getNumLeafNodes
     ## PsuedoCode
 
-    intersection()
-        String Array [] with all values of user numbers
-        NodeType n = head
-        String final list;
+    public int getNumLeafNodes(NodeType<T> node)
+        if node is null, return 0
+        if node is leaf node (both pointers are null), return 1
+        return addition of recursive calls of function for node.left and node.right
 
-        for each num in array:
-            if this.search(num) > 0
-                final list += num
+    - Recurrence Relation: T(n) = 2T(n/2) + 1. a=2, b=2, d=0, so it is in O(n)
+        The complexity of this operation is O(n) because the function recursively visits every node in the tree.
 
 #getCousins
 
 
-    ## Discussion
-        The complexity of this operations is O(n) because the string array, temp node, and string of final list are all constant time operations. There is a for loop that loops over each num in the array, n times and a if condition is ran n times. The statement inside the if conditional is a constant time operation. Overall this means that the total time complexity falls under O(n)
