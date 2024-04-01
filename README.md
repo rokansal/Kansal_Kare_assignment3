@@ -37,8 +37,8 @@
     - Recurrence Relation: T(n) = 2T(n/2) + 1. a=2, b=2, d=0, so it is in O(n)
         The complexity of this operation is O(n) because the function recursively visits every node in the tree.
 
-#getCousins
-  ## Psuedocode
+  ## getCousinscode
+      ## PsuedoCode
   ```java
   public void printCousins(NodeType<T> temp, T item, int level)
     if level is < 2 return;
